@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-md-8 offset-md-3 "> 
+  <h3>UPDATE APPLICATIONS STATUS</h3>
+  <form (ngSubmit)="onSubmit()">
+<div class="form-group">
+<label><strong>Applicant_Name:-</strong></label><br>
+<input type="text" class="form-control" id="applicationId" [(ngModel)]="applications.firstName" name="applicationId"/>
+</div>
+<br><br>
+<div class="form-group">
+  <label><strong>Date_Of_Birth:-</strong></label>
+  <input type="text" class="form-control" id="applicantName" [(ngModel)]="applications.dateOfBirth" name="applicantName"/>
+    </div>
+    <br><br>
+    <div class="form-group">
+      <label><strong>Gender:-</strong> </label>
+      <input type="text" class="form-control" id="applicationDate" [(ngModel)]="applications.gender" name="applicationDate"/>
+        </div>
+        <br><br>
+        <div class="form-group">
+          <label><strong>status:-</strong></label>
+          <input type="text" class="form-control" id="status" [(ngModel)]="applications.status" name="status"/>
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit" [routerLink]="['/application'] " (click)="giveAlert()">Add</button>
+            
+  </form>
+</div>
+</div>

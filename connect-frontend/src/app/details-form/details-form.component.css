@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap');
+form{
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    border-radius: 19px;
+    background: linear-gradient(315deg, #baffff, #dde2e2);
+    box-shadow:  -20px -20px 53px #b0b3b3,
+                20px 20px 53px #eef3f3;
+                margin-bottom: 20px;
+}
+h1{
+    font-weight: 500;
+}
+mat-form-field{
+    width: 60%;
+    margin: 15px 15px;
+    /* border:1px solid black; */
+    /* margin-left:60px; */
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -24px; /* Adjust the margin as needed */
+  }
+  .heading{
+    margin-left:20px;
+    margin-top: 15px;
+    /* border: 1px solid green; */
+    width:95%;
+    padding-top:10px;
+    font-size: 1.65em;
+    color: #333;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 700;
+  }
+  mat-form-field{
+
+    width:55%;
+  }
+  .heading-top{
+    /* border: 1px solid black;*/
+    padding:15px;
+    background-color: #3f70f3;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  font-family: 'Nanum Myeongjo', serif;
+   font-weight: 800;
+  /*border-radius:30% 70% 48% 52% / 30% 30% 70% 70% */
+  }
+.mat-mdc-text-field-wrapper{
+  width:140%;
+}
+button{
+  height: 35px;
+  margin:15px 20px;
+}
+
+
+.parent,.heading{
+  width: 97%;
+  margin:auto;
+  padding: 2px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: flex;
+align-items: center;
+}
+.plogo {
+  margin-right: 15px;
+
+  /* border: 1px solid blue; */
+  border-radius: 50%;
+  background-color: rgb(152, 252, 255);
+  padding: 0;
+}
+
+img {
+  padding: 0%;
+  max-width: 90px;
+  height: auto;
+  /* border: 1px solid green; */
+  scale: 0.6;
+}
+
+.ptext{
+  font-size: 1.65em;
+  color: #333;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 1em;
+  color: #333;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+}
+
+form-group{
+  margin: 15px 15px;
+}
+
+ .dp{
+  scale:1.3;
+  margin:15px;
+ }
+ .dp-group{
+  margin: auto;
+  width: 90%;
+ }
+
+
+ .button {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  /* font-size: 15px; */
+  font-size: 1.1rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+.center-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  font-size: 1.1rem;
+  margin-top: 10px; /* Add margin between buttons if needed */
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+#exampleModalLabel{
+  font-size: 1.8rem;
+  text-align: center;
+}

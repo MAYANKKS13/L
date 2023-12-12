@@ -1,0 +1,55 @@
+
+<div class="loginWrapper">
+
+ <div class="icon">
+	<button class="icon-button" (click)="onClickLoan()">
+		Connect For Loan
+	</button>
+ </div>
+
+
+<div class="mr10">	
+<div [ngClass]="loginAnimation?'container right-panel-active':'container'" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Register</h1>
+			
+			
+			<input type="email" name="email" placeholder="Email" required [(ngModel)]="email">
+					<input type="password" name="password" placeholder="Password" required [(ngModel)]="password">
+			<input type="password" name="confirmPassword" placeholder="Confirm Password" required [(ngModel)]="confirmPassword" 
+					[ngClass]="{'errorInput' : password!==confirmPassword && confirmPassword}">
+					<p class="errorText" *ngIf="password!==confirmPassword && confirmPassword">Password does not match</p>
+			<button [disabled]="password!==confirmPassword" (click)="onSignUp()">Register</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>LogIn</h1>
+			
+			
+			<input type="email" name="email" placeholder="Email" required [(ngModel)]="email">
+					<input type="password" name="password" placeholder="Password" required [(ngModel)]="password">
+			
+			<button (click)="onLogIn()">LogIn</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1 class="heading">Welcome Back!</h1>
+				<p class="content">To keep connected with us please login with your email.</p>
+				<button class="ghost" id="signIn" (click)="toggle()">LogIn</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1 class="heading">Hello Users!</h1>
+				<p class="content">Register and start journey with us</p>
+				<button class="ghost" id="signUp" (click)="toggle()">Register</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+</div>	

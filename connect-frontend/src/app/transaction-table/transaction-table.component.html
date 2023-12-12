@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="row m-t-10">
+      <div class="col-md-8">
+        <div class="card p-3">
+          <h4>Transactions</h4>
+          <table class="table">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">| Name</th>
+                <th scope="col">| Date</th>
+                <th scope="col">| Amount</th>
+                <th scope="col">| Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let formattedDate of paidPaymentData; let i = index">
+                <td>Loan EMI ({{ formattedDate.split("-")[1] }})</td>
+                <td>{{ formattedDate.split("-")[0] }}</td>
+                <td>₹ {{ emi }}</td>
+                <td>
+                  <div class="badge"><span>Completed</span></div>
+                </td>
+              </tr>
+
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h3>Pending EMI's</h3>
+
+          <table class="table">
+            <tbody>
+              <tr *ngFor="let formattedDate of pendingPaymentData; let i = index">
+                <th>{{ i + 1 }}</th>
+                <td>{{ formattedDate }}</td>
+                <td>
+                  <div class="pay_emi_button" (click)="paymentPage(formattedDate)"><span>Pay</span></div>
+                </td>
+              </tr>
+
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

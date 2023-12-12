@@ -1,0 +1,27 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: admin_service
+  datasource:
+    url: jdbc:mysql://localhost:3306/admin_data
+    username: root
+    password: MySQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+       show-sql: true
+       ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone:  http://localhost:8761/eureka/
+
+
+
+
+
+

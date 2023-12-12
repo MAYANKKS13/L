@@ -1,0 +1,84 @@
+
+
+.bank-details-form {
+  background: linear-gradient(to bottom, #e3e9f7, #e0f4f7); /* Add a subtle gradient background */
+  border: 2px solid #9ac3ee;  /* Adjust the border color */
+  padding: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a shiny effect */
+  /* height: 530px; */
+}
+
+
+/* Style the heading */
+h2 {
+  font-size: 20px; /* Reduce the font size */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px; /* Reduce the margin */
+}
+
+/* Style the form container */
+.form-group {
+  margin-bottom: 15px; /* Reduce the margin */
+}
+
+/* Style form labels */
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px; /* Reduce the font size */
+  margin-bottom: 8px;
+}
+
+/* Style form inputs */
+input[type="text"] {
+  width: 95%;
+  padding: 8px; /* Reduce the padding inside input fields */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px; /* Reduce the padding */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px; /* Reduce the font size */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 12px;
+}
+
+
+
+/* styles.css or your custom CSS file */
+.custom-snack-bar {
+  background-color: #f60000; /* Background color */
+  color: #fff; /* Text color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 16px; /* Padding inside the snack bar */
+  text-align: center; /* Center align text */
+  font-size: 18px; /* Text size */
+  position: fixed; /* Fixed position to appear in the middle of the screen */
+  left: 50%; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  transform: translate(-50%, -50%); /* Center the snack bar */
+  z-index: 9999; /* Ensure it's above other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  max-width: 80%; /* Adjust the maximum width */
+}

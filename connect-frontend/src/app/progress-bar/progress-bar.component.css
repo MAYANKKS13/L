@@ -1,0 +1,121 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: rgba(203, 220, 247, 1);
+  /* background-image: url(..\..\..\assets\images\laptop.png);
+  background-size: cover;
+  background-position: center; */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  min-width: 100vh;
+  min-height: 100vh; /* Set the body height to fill the viewport */
+  position: relative; /* Create a stacking context */
+  z-index: -2;
+  overflow: hidden;
+  
+  
+}
+
+.title_image{
+  position: absolute;
+  width: 60vh;
+  height: 60vh;
+  left: 70%;
+  top: 45%;
+}
+
+h2{
+  position: absolute;
+  left: 40%; /* Center horizontally */
+  top: 10%;
+  background-color: #115c9d;
+  color: white;
+  padding: 6px;
+}
+
+
+
+.progress_bar{
+  white-space: nowrap;
+  position: absolute;
+    margin: 300px auto;
+    left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  /* margin-left: 50px; */
+
+}
+.progress_bar img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+
+ul {
+    text-align: center;
+  }
+  
+  ul li {
+    display: inline-block;
+    width: 200px;
+    position: relative;
+
+  }
+  
+  ul li .fa {
+    background: #ccc;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+
+  }
+  
+  ul li .fa::after {
+    content: '';
+    background: #ccc;
+    height: 5px;
+    width: 200px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 105px;
+    z-index: -1; 
+
+  }
+
+  
+
+
+  ul li:first-child .fa::after{
+    width: 100px;
+    left: 100px;
+  }
+  
+  ul li:last-child .fa::after{
+    width: 100px;
+  
+  }
+
+
+.blank-color, .blank-color::after
+{
+  background-color:  #ccc !important;
+}
+
+.red-color, .red-color::after
+{
+  background-color:  red !important;
+}
+
+.dark-color, .dark-color::after
+{
+  background-color:  #148e14 !important;
+}
+
+.light-color, .light-color::after
+{
+  background-color:  #60aa97 !important;
+}

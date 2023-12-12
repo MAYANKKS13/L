@@ -1,0 +1,165 @@
+.terms_conditions
+{
+    position: absolute;
+   
+    
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+  background-color: black; /* Light background with some transparency */
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  z-index: 2; /* Ensure it's above other content */
+}
+
+.terms_conditions_text
+{
+    color: blue; /* Set the text color to blue to mimic a link */
+            text-decoration: underline; /* Underline the text to mimic a link */
+            cursor: pointer;
+}
+
+
+.pay_emi_button span
+{
+    
+
+    background-color: #00AE4E !important;
+    width: 80px !important;
+    height: 30px    !important;
+    padding-bottom: 3px;
+    border-radius: 40px;
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    
+}
+
+.mt-5 {
+    margin-top: 2rem!important;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 0 plum !important;
+    padding-bottom: 0px    !important;
+
+}
+
+.card-less {
+    
+    padding: 0px    !important;
+    padding-top: 20px   !important;
+
+}
+
+.chart
+{
+    min-width: 300px;
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.container
+{
+    margin-top: 0px;
+    padding: 0px;
+}
+
+.d-flex
+{
+}
+
+
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    background-color: #fffbec;
+    width: 70px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 25%;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
+
+.user_image
+{
+    height: 25px;
+    width: 25px;
+}
+
+.info-center
+{
+    display: flex   !important;
+    flex-direction: column    !important;
+    justify-content: center   !important;
+    align-items: center;
+
+}
+
+/* .info-center-parent
+{
+    display: flex   !important;
+    flex-direction: row    !important;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    width: 100%;
+} */
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    color: #919aa3 !important;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.f-w-600 {
+    font-weight: bold;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}

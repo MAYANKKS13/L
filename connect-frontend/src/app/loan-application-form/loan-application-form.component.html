@@ -1,0 +1,44 @@
+
+
+<h2>Please Provide Your Bank Details</h2>
+
+<form (ngSubmit)="submitLoanApplication()" #loanAppForm="ngForm" class="bank-details-form">
+  <div class="form-group">
+    <label for="bankname"><i class="fa fa-university" aria-hidden="true" style="color: #3661ab;"></i>   Bank Name:</label>
+    <input type="text" id="bankname" name="bankname" [(ngModel)]="formData.bankname" required>
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['bankname']?.hasError('required')" class="error-message">Bank Name is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="ifsccode"><i class="fa fa-info-circle" aria-hidden="true" style="color: #3661ab;"></i>  IFSC Code:</label>
+    <input type="text" id="ifsccode" name="ifsccode" [(ngModel)]="formData.ifsccode" required pattern="^[A-Za-z0-9]{11}$">
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['ifsccode']?.hasError('required')" class="error-message">IFSC Code is required.</div>
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['ifsccode']?.hasError('pattern')" class="error-message">IFSC Code should contain 11 alphanumeric characters.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="accountnumber"><i class="fa fa-credit-card" aria-hidden="true" style="color: #3661ab;"></i>  Account Number:</label>
+    <input type="text" id="accountnumber" name="accountnumber" [(ngModel)]="formData.accountnumber" required pattern="^[0-9]{10,}$">
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['accountnumber']?.hasError('required')" class="error-message">Account Number is required.</div>
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['accountnumber']?.hasError('pattern')" class="error-message">Account Number should contain at least 10 digits.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="ownername"><i class="fa fa-user" aria-hidden="true" style="color: #3661ab;"></i>  Owner Name:</label>
+    <input type="text" id="ownername" name="ownername" [(ngModel)]="formData.ownername" required>
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['ownername']?.hasError('required')" class="error-message">Owner Name is required.</div>
+  </div>
+  <div class="form-group">
+    <label for="aadharcard"><i class="fa fa-id-card" aria-hidden="true" style="color: #3661ab;"></i>   Aadhar Card:</label>
+    <input type="text" id="aadharcard" name="aadharcard" [(ngModel)]="formData.aadharcard" required pattern="^[0-9]{12}$">
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['aadharcard']?.hasError('required')" class="error-message">Aadhar Card is required.</div>
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['aadharcard']?.hasError('pattern')" class="error-message">Aadhar Card should contain 12 digits.</div>
+  </div>
+  <div class="form-group">
+    <label for="pancard"><i class="fa fa-id-card-o" aria-hidden="true" style="color: #3661ab;"></i>   Pan Card:</label>
+    <input type="text" id="pancard" name="pancard" [(ngModel)]="formData.pancard" required pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$">
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['pancard']?.hasError('required')" class="error-message">Pan Card is required.</div>
+    <div *ngIf="loanAppForm.submitted && loanAppForm.controls['pancard']?.hasError('pattern')" class="error-message">Pan Card should be in the format ABCDE1234F.</div>
+  </div>
+  <button type="submit" routerLink="/checkout">Apply for Loan</button>
+</form>

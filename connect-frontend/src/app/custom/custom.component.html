@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0-beta3/css/all.min.css">
+
+
+
+<div class="top-container aa bb">
+  <button type="button" class="button btn  goback" routerLink="/loan"><span>GO BACK</span></button>
+   
+  
+  <div class="search-container">
+    <form class="fform" (submit)="onSearch()">
+      
+        <input type="number"  placeholder="₹ PUT AMOUNT IN INR" id="loanAmount" name="loanAmount" class="form-control input-with-icon" [(ngModel)]="searchLoanAmount">
+        
+      
+    </form>
+
+  </div>
+  <button  type="submit" class="btn button aa" ><span>GET LOANS FAST</span></button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card-container right col-lg-6 col-md-6 col-sm-12   " >
+
+  <div class="row" *ngFor="let loan of loans">
+
+<div class="card text-center  bg-transparent border-success hawk">
+  <div class="card-header">
+    <h6 class="card-title"></h6>
+  </div>
+  <div class="card-body">
+
+    <p class="card-text ">LOAN AMOUNT UPTO  {{ loan.loanAmount }} LAKHS INR 
+      <br>WITH TENURE UPTO {{ loan.tenure }} MONTHS AND  <br>INTREST OF
+      {{ loan.interestRate }}%
+    </p>
+   
+    
+    <a href="#" class="btn btn-outline-success" routerLink="/personal-details">SELECT AND PROCEED TO FILL FORM</a>
+    <!-- <button (click)="onSaveDataToElasticSearch(loanData)">SELECT AND PROCEED TO FILL FORM</button> -->
+  </div>
+</div>
+
+
+
+
+</div> 
+  
+   
+</div>
+<div class="book">
+  <span class="Guide">The Borrower agrees to repay the loan in installments as specified in the repayment schedule provided by the Lender
+
+
+    The Borrower should limit the tenure to 36 months; any more will result in application rejection
+    
+    
+    The Lender shall collect and use the Borrower's personal information in accordance with applicable privacy laws and the Lender's Privacy Policy
+    
+    
+    This Agreement shall be governed by and construed in accordance with the laws of [Jurisdiction], and any disputes shall be subject to the exclusive jurisdiction of the courts of [Jurisdiction]</span><br>
+    
+  <div class="cover">
+      <h3>TERMS AND CONDITIONS FOR YOUR LOAN</h3>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

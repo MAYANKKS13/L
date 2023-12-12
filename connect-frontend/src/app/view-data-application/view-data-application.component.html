@@ -1,0 +1,52 @@
+
+<div class="container" >
+    <h2>Details Of Customer</h2>
+    <div class="details">
+        <label><strong>Application_Id:- </strong></label>{{applications.borrowerId}}
+    </div>
+    <div class="details">
+        <label><strong>Applicant_Name:-  </strong></label>{{applications.firstName}}{{applications.lastName}}
+    </div>
+    <div class="details">
+        <label><strong>Email_Id:-</strong></label> {{applications.emailId}}
+    </div>
+    <div class="details">
+        <label><strong>Phone_Number:-</strong></label> {{applications.phoneNumber}}
+    </div>
+    <div class="details">
+        <label><strong>Date_OF_Birth:-</strong></label> {{applications.dateOfBirth}}
+    </div>
+    <div class="details">
+        <label><strong>Gender:-</strong></label> {{applications.gender}}
+    </div>
+    <div class="details">
+        <label><strong>Street:-</strong></label> {{applications.address.street}}
+    </div>
+    <div class="details">
+        <label><strong>ZipCode:-</strong></label> {{applications.address.zipCode}}
+    </div>
+    <div class="details">
+        <label><strong>Village/City:-</strong></label> {{applications.address.villageOrCity}}
+    </div>
+    <div class="details">
+        <label><strong>district:-</strong></label> {{applications.address.district}}
+    </div>
+    <div class="details">
+        <label><strong>State:-</strong></label> {{applications.address.state}}
+    </div>
+    <div class="details">
+        <label><strong>Country:-</strong></label> {{applications.address.country}}
+    </div>
+    <div class="details">
+        <label><strong>Status:-</strong></label>{{applications.status}}
+        <!-- <a [routerLink]="['/user', 'sandeep@gmail.com']">View User Details</a> -->
+    </div>
+    <div class="details">
+        <button class="btn btn-info" (click)="goback()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go-Back</button> 
+            <button (click)="goEmiTrack()">EMI_Record_Page
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+      
+    </div>
+</div>
+ 

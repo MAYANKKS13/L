@@ -1,0 +1,77 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        # ADMIN-SERVICE
+        - id: admin-service
+          uri: http://localhost:8000
+          predicates:
+#<<<<<<< HEAD
+            - Path=/applicationsDetails/**
+#=======
+#            - Path=/applicationDetails/**
+#>>>>>>> 209c794b16393680b5b99df5892fc42bcea24101
+
+        # AUTHENTICATION-SERVICE
+        - id: authentication-service
+          uri: http://localhost:8060
+          predicates:
+            - Path=/user/**
+
+        # DETAILS-SERVICE
+        - id: details-service
+          uri: http://localhost:8090
+          predicates:
+            - Path=/personaldetails/**
+
+        # EUREKA-SERVER
+        - id: eureka-server
+          uri: http://localhost:8761
+          predicates:
+            - Path=/api/v1/eureka/**
+
+        # LOAN-PROVIDE(1)
+        - id: loan-provide
+          uri: http://localhost:8080
+          predicates:
+            - Path=/loans2/**
+#<<<<<<< HEAD
+#            - Path=/customtypes/**
+
+
+#=======
+            - Path=/customtypes/**
+
+
+#>>>>>>> 209c794b16393680b5b99df5892fc42bcea24101
+        # LOAN-TEST-MASTER
+        - id: bank-details-service
+          uri: http://localhost:8070
+          predicates:
+            - Path=/loanApplications/**
+
+        # PAYMENT-STRIPE
+        - id: stripe
+          uri: http://localhost:8040
+          predicates:
+            - Path=/api/**
+
+        - id: INDIVIDUAL-LOAN-DETAILS
+          uri: http://localhost:8096
+          predicates:
+            - Path=/loanApi/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

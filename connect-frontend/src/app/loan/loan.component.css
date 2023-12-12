@@ -1,0 +1,144 @@
+.card-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make the container full height of the viewport */
+    background-color: #F9F5F6;
+    
+    
+    
+  }
+  
+  /* Apply flexbox properties to each card row to remove gaps between them */
+  .card-row {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    
+  }
+  
+  /* Add any additional styling to your cards here */
+  .card {
+    /* Your card styles */
+    background-color: #F6F1F1;
+    border: 0;
+    margin-left: 10px;
+    margin-right: -20px;
+    margin-top: -5px;
+    
+  }
+
+
+
+
+
+.card{
+  /* border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 3px 7px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px; */
+  cursor: pointer;
+  
+}
+
+.card:hover{
+     transform: scale(1.05);
+  /* box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 2px 5px rgba(0,0,0,.06); */
+  box-shadow: 0 10px 20px #EE9322, 0 2px 5px #4D2DB7;
+
+  /* background: #AEC3AE; */
+  
+}
+
+
+
+
+
+
+  
+  /* Center the card header text */
+  .card-header {
+    text-align: center;
+  }
+  
+  /* Center the card title and card text */
+  .card-title,
+  .card-text,
+  .card-body {
+    text-align: center;
+  }
+  
+  .btn
+  {
+    margin-bottom: auto;
+  }
+  .hawk
+  {
+    margin-top: 42px;
+    
+  }
+  .pp
+  {
+    margin-top: 10px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .btn {
+    padding: 1.1em 2em;
+    background: none;
+    border: 2px solid #fff;
+    font-size: 11px;
+    color: #131313;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #9EB384;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+   }
+   
+   .btn:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 120%;
+    background-color: #ff6700;
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.5s;
+   }
+   
+   .btn:hover {
+    background-color: #4cc9f0;
+    color: #fff;
+    box-shadow: 0 2px 0 2px #0d3b66;
+   }
+   
+   .btn:hover::before {
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+   }
+   
+   .btn:active {
+    transform: scale(0.9);
+   }

@@ -1,0 +1,30 @@
+.container{
+    text-align: center;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 0%;
+    background-color: rgb(169, 170, 171);
+    border-color: blue;
+}
+.first{
+    margin-top: 20px;
+    display:flex;
+    
+}
+
+.Emi button{
+ 
+    margin-top:60px;
+    border-radius: 8px;
+    background-color: rgb(14, 74, 119);
+    height: 45px;
+    border-color: black;
+    color: blanchedalmond;
+}
+button{
+    cursor: pointer;
+   border:none;
+}
+.card{
+    box-shadow: 10px 10px 10px rgb(11, 11, 13);
+}

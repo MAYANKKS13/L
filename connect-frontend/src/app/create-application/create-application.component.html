@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-8 offset-md-3"> 
+  <h3>Create Application</h3>
+  <form (ngSubmit)="onSubmit()">
+<div class="form-group">
+<label>applicationId</label>
+<input type="text" class="form-control" id="applicationId" [(ngModel)]="applications.borrowerId" name="applicationId"/>
+</div>
+<div class="form-group">
+  <label>Applicant_Name</label>
+  <input type="text" class="form-control" id="applicantName" [(ngModel)]="applications.firstName" name="applicantName"/>
+    </div>
+    <div class="form-group">
+      <label>Date_Of_Birth </label>
+      <input type="text" class="form-control" id="applicationDate" [(ngModel)]="applications.dateOfBirth" name="applicationDate"/>
+        </div>
+        <div class="form-group">
+          <label>status</label>
+          <input type="text" class="form-control" id="status" [(ngModel)]="applications.status" name="status"/>
+            </div>
+            <button class="btn btn-success" type="submit">Add</button>
+  </form>
+</div>
+</div>

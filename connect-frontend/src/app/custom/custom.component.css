@@ -1,0 +1,422 @@
+.top-container {
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px; /* Adjust the padding as needed */
+    margin-left: 410px;
+    margin-top: 30px;
+  }
+  
+  .search-container {
+    display: inline-block;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 0px;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container input {
+    padding-right: 30px; /* Adjust as needed to leave space for the icon */
+  }
+  
+  .input-container i.fa-search {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent the icon from blocking input clicks */
+  }
+
+  
+  .card-header {
+    display: none;
+  }
+  
+  .line
+  {
+    margin-top: -15px;
+  }
+  .book {
+    position: relative;
+    border-radius: 10px;
+    margin-top: 40px;
+    width: 620px;
+    height: 400px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+    margin-left: 420px;
+  }
+  
+  .cover {
+    top: 0;
+    position: absolute;
+    background-color: #AEC3AE;
+    width: 100%;
+    height: 100%;
+    font-size: small;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+  }
+  
+  p {
+    font-size: 20px;
+    /* font-weight: bolder; */
+  }
+  .Guide{
+    padding-left: 25px;
+    padding-right: 20px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  /* Style the input */
+  .input-with-icon {
+    position: relative;
+  }
+  
+  /* Style the magnifying glass icon */
+  .input-with-icon i.fa-search {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent the icon from blocking input clicks */
+  }
+  
+  /* Adjust the padding to leave space for the icon */
+  .input-with-icon input {
+    padding-right: 30px; /* Adjust as needed */
+  }
+ 
+  
+  
+  /* styles.css (or your component's CSS) */
+  
+  /* Style the input field */
+  .input-with-icon {
+    position: relative;
+  }
+  
+  .input-with-icon input {
+    padding-right: 30px; /* Adjust as needed to leave space for the icon */
+    text-align: center; /* Center the input text */
+  }
+  
+  .input-with-icon::placeholder {
+    text-align: center; /* Center the placeholder text */
+    color: #999; /* Adjust the color as needed */
+    opacity: 0.6; /* Adjust the opacity as needed */
+  }
+  
+  /* Add any additional styling as needed */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    gap: 50px; /* Adjust the gap (space between cards) as needed */
+  }
+  
+  .card {
+    /* Your card styles here */
+    margin-left: 220px;
+    margin-right: 100px;
+  }
+  
+  /* Add any additional styling as needed */
+  
+  .card{
+    cursor: pointer;
+    
+  }
+  
+  .card:hover{
+       transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 2px 5px rgba(0,0,0,.06);
+  
+    background: #FF6969;
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 450;
+    font-size: 17px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #66ff66;
+    color: ghostwhite;
+    
+   }
+   
+   button span {
+    position: relative;
+    z-index: 10;
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+   }
+   
+   button:hover span {
+    color: black;
+   }
+   
+   button::before,
+   button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   button::before {
+    content: "";
+    background: #57375D;
+    width: 120%;
+    left: -10%;
+    -webkit-transform: skew(30deg);
+        -ms-transform: skew(30deg);
+            transform: skew(30deg);
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1), -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+   }
+   
+   button:hover::before {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+   }
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

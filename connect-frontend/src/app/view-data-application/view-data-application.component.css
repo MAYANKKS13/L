@@ -1,0 +1,19 @@
+.container{
+    margin-left: 200px;
+    margin-top: 80px;
+    height: 1500px;
+    overflow: scroll;
+    height: 100vh;
+}
+.details{
+    margin-top: 20px;
+    
+}
+.details button{
+    margin-left: 30px;
+    border-radius: 8px;
+    background-color: rgb(14, 74, 119);
+    height: 45px;
+    border-color: black;
+    color: blanchedalmond;
+}

@@ -1,0 +1,52 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    
+                    <img class = 'main_card_image' src="../../assets/images/gold_wallet.png" alt="Not Available">
+            
+                    <h6 class="main_card_text">Total Amount</h6>
+                    <p class="main_card_amount" >₹ {{ totalAmount | number: '1.0-0': 'en-IN' }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-purple order-card">
+              <div class="card-block">
+                    
+                <img class = 'main_card_image' src="../../assets/images/purple_dollar.png" alt="Not Available">
+        
+                <h6 class="main_card_text">Amount Paid</h6>
+                <p class="main_card_amount" >₹ {{ paidAmount | number: '1.0-0': 'en-IN' }}</p>
+            </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3">
+            <div  class="card bg-c-pink order-card">
+              <div class="card-block">
+                    
+                <img class = 'main_card_image' src="../../assets/images/red_dollar.png" alt="Not Available">
+        
+                <h6 class="main_card_text">Due Amount</h6>
+                <p class="main_card_amount" >₹ {{ (totalAmount - paidAmount) | number: '1.0-0': 'en-IN' }}</p>
+            </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-green order-card">
+              <div class="card-block">
+                    
+                <img class = 'main_card_image' src="../../assets/images/green_window.png" alt="Not Available">
+        
+                <h6 class="main_card_text">Loan Term</h6>
+                <p class="main_card_amount" >{{ loanTenure }} months</p>
+            </div>
+            </div>
+        </div>
+	</div>
+</div>

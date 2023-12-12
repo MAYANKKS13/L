@@ -1,0 +1,390 @@
+
+<!-- <mat-toolbar color="primary">ConnectForLoan</mat-toolbar> -->
+
+<div class="container mt-5">
+
+
+  <h1 class="text-left mb-4 heading-top">User Details</h1>
+  <form (ngSubmit)="saveDetails()" #detailsForm="ngForm" *ngIf="!detailsSaved || formSubmitted">
+
+
+    <!-- Error Snackbar for Unfilled Fields -->
+    <div *ngIf="!detailsSaved && detailsForm.invalid" class="error-message text-center">
+      <mat-icon color="warn">error</mat-icon>
+      <span>Please fill out all required fields</span>
+    </div>
+
+    <!-- Profile Picture -->
+    <div class="form-group dp-group">
+      <label for="profilePicture"></label>
+      <img [src]="profilePictureUrl || '../../assets/images/dp.png'" alt="" class="dp">
+      <!-- Hide the default file input -->
+      <input type="file" accept="image/*" (change)="onFileSelected($event)" #fileInput style="display: none;">
+      <!-- Create a styled button -->
+      <button mat-icon-button (click)="fileInput.click()" class="custom-upload-button">
+        <!-- Add an icon or text for the button -->
+        <mat-icon>cloud_upload</mat-icon> 
+        Upload Image
+      </button>
+      <span>{{ selectedFileName }}</span>
+    </div>
+
+    
+    <!-- Personal Details -->
+   <div class="row">
+   <div class="col-md-9 heading">
+    <h2><img src="../../assets/images/sads.png" alt="Personal Details">Personal Details</h2>
+   </div>  
+  </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="firstName" [(ngModel)]="formData.firstName" placeholder="Eg. John" required>
+          <mat-label>First Name</mat-label>
+          <mat-error *ngIf="detailsForm.controls['firstName']?.hasError('required')">First Name is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="lastName" [(ngModel)]="formData.lastName" placeholder="Eg. Wick" required>
+          <mat-label>Last Name</mat-label>
+          <mat-error *ngIf="detailsForm.controls['lastName']?.hasError('required')">Last Name is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Email and Phone Number -->
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput type="email" name="emailId" [(ngModel)]="formData.emailId" placeholder="Eg. johnwick@gmail.com" required>
+          <mat-label>Email</mat-label>
+          <mat-error *ngIf="detailsForm.controls['emailId']?.hasError('required')">Email Id is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput type="tel" name="phoneNumber" [(ngModel)]="formData.phoneNumber" placeholder="Eg. 812XXXXXXX" required>
+          <mat-label>Phone Number</mat-label>
+          <mat-error *ngIf="detailsForm.controls['phoneNumber']?.hasError('required')">Phone Number is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Date of Birth, Gender, and Display Name -->
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput [matDatepicker]="picker" name="dateOfBirth" [(ngModel)]="formData.dateOfBirth" placeholder="mm-dd-yyyy" required max="{{ maxDate | date:'yyyy-MM-dd' }}">
+          <mat-label>Date of Birth</mat-label>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="detailsForm.controls['dateOfBirth']?.hasError('required')">Date of Birth is Required!</mat-error>
+          <mat-error *ngIf="detailsForm.controls['dateOfBirth']?.hasError('ageInvalid')">Age Must be at least 18 years.</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select name="gender" [(ngModel)]="formData.gender" required>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="other">Other</mat-option>
+          </mat-select>
+          <mat-error *ngIf="detailsForm.controls['gender']?.hasError('required')">Gender is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Display Name -->
+    <div class="row">
+      <div class="col-md-9">
+        <mat-form-field appearance="fill">
+          <input matInput name="displayName" [(ngModel)]="formData.displayName" placeholder="Eg. Wick John" required>
+          <mat-label>Display Name</mat-label>
+           <mat-error *ngIf="detailsForm.controls['displayName']?.hasError('required')">Display name is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="row">
+      <div class="col-md-9 heading">
+        <h2><img src="../../assets/images/address.png"alt="address">Address Details</h2>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="address.street" [(ngModel)]="formData.address.street" placeholder="Eg. 6th Street" required>
+          <mat-label>Street</mat-label>
+
+          <mat-error *ngIf="detailsForm.controls['address.street']?.hasError('required')">Street is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="address.village" [(ngModel)]="formData.address.village" required>
+          <mat-label>Village/City</mat-label>
+
+          <mat-error *ngIf="detailsForm.controls['address.village']?.hasError('required')">Village/City is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="address.zipCode" [(ngModel)]="formData.address.zipCode" placeholder="Eg. 123456" required>
+          <mat-label>Zip Code</mat-label>
+          <mat-error *ngIf="detailsForm.controls['address.zipCode']?.hasError('required')">Zip Code is required</mat-error>
+          <mat-error *ngIf="detailsForm.controls['address.zipCode']?.hasError('pattern')">Zip Code must be 6 digits</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="address.district" [(ngModel)]="formData.address.district" required>
+          <mat-label>District</mat-label>
+
+          <mat-error *ngIf="detailsForm.controls['address.district']?.hasError('required')">District name is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="address.state" [(ngModel)]="formData.address.state" required>
+          <mat-label>State</mat-label>
+
+           <mat-error *ngIf="detailsForm.controls['address.state']?.hasError('required')">State is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <mat-form-field appearance="fill">
+        <input matInput name="address.country" [(ngModel)]="formData.address.country" required>
+        <mat-label>Country</mat-label>
+
+        <mat-error *ngIf="detailsForm.controls['address.country']?.hasError('required')">Country name is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Add EMI Plan Details -->
+    <div class="row">
+      <div class="col-md-9 heading">
+        <h2><img src="../../assets/images/amounts.png" alt="address">Amount Details</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="loanDetails.amount" [(ngModel)]="formData.loanDetails.amount" placeholder="Eg. 200000" required>
+          <mat-label>Amount</mat-label>
+  
+          <mat-error *ngIf="detailsForm.controls['loanDetails.amount']?.hasError('required')">Loan Amount is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill">
+          <input matInput name="loanDetails.tenure" [(ngModel)]="formData.loanDetails.tenure" placeholder="Eg. 24 (in Months)" required>
+          <mat-label>Tenure</mat-label>
+  
+          <mat-error *ngIf="detailsForm.controls['loanDetails.tenure']?.hasError('required')">Tenure is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    
+
+      <!-- <button mat-raised-button color="primary" type="submit" class="button">Save & Continue</button> -->
+      <div class="text-center mt-4 center-buttons">
+        <!-- <button mat-raised-button color="primary" type="submit" class="button">Save & Continue</button> -->
+        <button type="submit" class="button">
+          Save & Continue
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <!-- Add an "Update Details" button to allow users to modify their data -->
+        <button mat-raised-button color="primary" type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(formData)">Update Details</button>
+        <!-- (click)="updateDetails()"  -->
+      </div>
+      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+      </button> -->
+
+  </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update User Details</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="saveDetails()" #detailsForm="ngForm" *ngIf="!detailsSaved || formSubmitted">
+
+
+          <!-- Error Snackbar for Unfilled Fields -->
+          <div *ngIf="!detailsSaved && detailsForm.invalid" class="error-message text-center">
+            <mat-icon color="warn">error</mat-icon>
+            <span>Please fill out all required fields</span>
+          </div>
+      
+          <!-- Profile Picture -->
+          <div class="form-group dp-group">
+            <label for="profilePicture"></label>
+            <img [src]="profilePictureUrl || 'assets/dp.png'" alt="" class="dp">
+            <!-- Hide the default file input -->
+            <input type="file" accept="image/*" (change)="onFileSelected($event)" #fileInput style="display: none;">
+            <!-- Create a styled button -->
+            <button mat-icon-button (click)="fileInput.click()" class="custom-upload-button">
+              <!-- Add an icon or text for the button -->
+              <mat-icon>cloud_upload</mat-icon> 
+              Upload Image
+            </button>
+            <span>{{ selectedFileName }}</span>
+          </div>
+      
+      
+          <!-- Personal Details -->
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput name="firstName" [(ngModel)]="formData.firstName" placeholder="Eg. John" required>
+                <mat-label>First Name</mat-label>
+                <mat-error *ngIf="detailsForm.controls['firstName']?.hasError('required')">First Name is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput name="lastName" [(ngModel)]="formData.lastName" placeholder="Eg. Wick" required>
+                <mat-label>Last Name</mat-label>
+                <mat-error *ngIf="detailsForm.controls['lastName']?.hasError('required')">Last Name is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+      
+          <!-- Email and Phone Number -->
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput type="email" name="emailId" [(ngModel)]="formData.emailId" placeholder="Eg. johnwick@gmail.com" required>
+                <mat-label>Email</mat-label>
+                <mat-error *ngIf="detailsForm.controls['emailId']?.hasError('required')">Email Id is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput type="tel" name="phoneNumber" [(ngModel)]="formData.phoneNumber" placeholder="Eg. 812XXXXXXX" required>
+                <mat-label>Phone Number</mat-label>
+                <mat-error *ngIf="detailsForm.controls['phoneNumber']?.hasError('required')">Phone Number is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+      
+          <!-- Date of Birth, Gender, and Display Name -->
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput [matDatepicker]="picker" name="dateOfBirth" [(ngModel)]="formData.dateOfBirth" placeholder="mm-dd-yyyy" required max="{{ maxDate | date:'yyyy-MM-dd' }}">
+                <mat-label>Date of Birth</mat-label>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="detailsForm.controls['dateOfBirth']?.hasError('required')">Date of Birth is Required!</mat-error>
+                <mat-error *ngIf="detailsForm.controls['dateOfBirth']?.hasError('ageInvalid')">Age Must be at least 18 years.</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>Gender</mat-label>
+                <mat-select name="gender" [(ngModel)]="formData.gender" required>
+                  <mat-option value="male">Male</mat-option>
+                  <mat-option value="female">Female</mat-option>
+                  <mat-option value="other">Other</mat-option>
+                </mat-select>
+                <mat-error *ngIf="detailsForm.controls['gender']?.hasError('required')">Gender is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+      
+          <!-- Display Name -->
+          <div class="row">
+            <div class="col-md-9">
+              <mat-form-field appearance="fill">
+                <input matInput name="displayName" [(ngModel)]="formData.displayName" placeholder="Eg. Wick John" required>
+                <mat-label>Display Name</mat-label>
+                 <mat-error *ngIf="detailsForm.controls['displayName']?.hasError('required')">Display name is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+      
+          <!-- Address -->
+          <div class="row">
+            <div class="col-md-9 heading">
+              <h2><img src="assets/address.png" alt="address">Address Details</h2>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput name="address.street" [(ngModel)]="formData.address.street" placeholder="Eg. 6th Street" required>
+                <mat-label>Street</mat-label>
+      
+                <mat-error *ngIf="detailsForm.controls['address.street']?.hasError('required')">Street is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput name="address.village" [(ngModel)]="formData.address.village" required>
+                <mat-label>Village/City</mat-label>
+      
+                <mat-error *ngIf="detailsForm.controls['address.village']?.hasError('required')">Village/City is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput name="address.zipCode" [(ngModel)]="formData.address.zipCode" placeholder="Eg. 123456" required>
+                <mat-label>Zip Code</mat-label>
+                <mat-error *ngIf="detailsForm.controls['address.zipCode']?.hasError('required')">Zip Code is required</mat-error>
+                <mat-error *ngIf="detailsForm.controls['address.zipCode']?.hasError('pattern')">Zip Code must be 6 digits</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput name="address.district" [(ngModel)]="formData.address.district" required>
+                <mat-label>District</mat-label>
+      
+                <mat-error *ngIf="detailsForm.controls['address.district']?.hasError('required')">District name is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <input matInput name="address.state" [(ngModel)]="formData.address.state" required>
+                <mat-label>State</mat-label>
+      
+                 <mat-error *ngIf="detailsForm.controls['address.state']?.hasError('required')">State is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+      
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <input matInput name="address.country" [(ngModel)]="formData.address.country" required>
+              <mat-label>Country</mat-label>
+      
+              <mat-error *ngIf="detailsForm.controls['address.country']?.hasError('required')">Country name is required</mat-error>
+            </mat-form-field>
+          </div>
+      
+      
+            <!-- <button mat-raised-button color="primary" type="submit" class="button">Save & Continue</button> -->
+            <div class="text-center mt-4 center-buttons">
+            
+              <!-- Add an "Update Details" button to allow users to modify their data -->
+              <button mat-raised-button color="primary" value="Update" type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Details</button>
+              <!-- (click)="updateDetails()"  -->
+            </div>
+      
+        </form>
+      </div>
+  
+    </div>
+  </div>
+</div>

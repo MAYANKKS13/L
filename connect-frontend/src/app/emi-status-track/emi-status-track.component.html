@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="emi-tracker">
+       <button class="btn" (click)="gotoDashBoard()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <div class="heading">  <h2>User's EMI Status And Record</h2></div>
+         
+        <table>
+          <thead>
+            <tr>
+                 <th>Registration_Number</th>
+                <th>User_Name</th>
+              <th>Loan Amount</th>
+              <th>Interest Rate</th>
+              <th>EMI Amount</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>User_details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr *ngFor="let emi of emiData">
+              <td>{{ emi.loanAmount }}</td>
+              <td>{{ emi.interestRate }}</td>
+              <td>{{ emi.emiAmount }}</td>
+              <td>{{ emi.dueDate }}</td>
+              <td>{{ calculateEmiStatus(emi) }}</td>
+            </tr> -->
+            <tr  *ngFor="let item of applications">
+            
+                <td>{{item.borrowerId}}</td>
+                <td>{{item.firstName}} {{item.lastName}}</td>
+                <td>{{item.loanDetails.amount}}</td>
+                <td>12.40%</td>
+                <td></td>
+                <td><button class="details"><input type="date" style="color: rgb(213, 233, 213); background-color: rgb(96,111,111);"></button></td>
+                <td> <button class="details"><select style="background-color: rgb(96, 111, 111); color: beige;border: none;"
+                  >
+                   <option value="notPaid"  >Not Paid</option>
+                   <option value="paid"  >&#x2705;Paid</option>
+                   <option value="noemi" >No EMI</option>
+                   
+               </select></button></td>
+                <td><button class="details" (click)="goToUser(item.emailId)">Check_Details</button></td>  
+            
+            </tr>
+          </tbody>
+        </table>
+</div>
+</div>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body *ngIf="showComponent">
+    <app-loan-details-cards></app-loan-details-cards>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card p-4">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"> 
+                                <img class = "user_image" src="../../assets/images/user-image.svg" alt="Not Available">
+                                 </div>
+                            <div class="ms-2 c-details">
+                                <h6 class="mb-0">Loan Details</h6> <span>8 days ago</span>
+                            </div>
+                        </div>
+                        <div class="badge"> <span>Loan</span> </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="row">
+                            <div class="col-sm-6 info-center">
+                                <p class="m-b-10 f-w-600">Principal Amount</p>
+                                <h6 class="text-muted f-w-400">₹ {{ principalAmount | number: '1.0-0': 'en-IN' }}</h6>
+                            </div>
+                            <div class="col-sm-6 info-center">
+                                <p class="m-b-10 f-w-600">Date Taken</p>
+                                <h6 class="text-muted f-w-400">22nd September 2023</h6>
+                            </div>
+                        </div>
+
+                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600"></h6>
+
+                        <div class="row">
+                            <div class="col-sm-6 info-center">
+                                <p class="m-b-10 f-w-600">Interest Rate</p>
+                                <h6 class="text-muted f-w-400"> {{ interestRate }} % </h6>
+                            </div>
+                            <div class="col-sm-6 info-center">
+                                <p class="m-b-10 f-w-600">Interest</p>
+                                <h6 class="text-muted f-w-400">₹ {{ interestAmount | number: '1.0-0': 'en-IN' }} </h6>
+                            </div>
+                        </div>
+
+                        <h2 class="m-b-20 p-b-5 b-b-default f-w-600"></h2>
+
+
+                        <div class="row">
+                            <div class="col-sm-6 info-center">
+                                <p class="m-b-10 f-w-600">EMI</p>
+                                <h6 class="text-muted f-w-400">₹ {{ emi | number: '1.0-0': 'en-IN' }}</h6>
+                            </div>
+                            <div class="col-sm-6 info-center">
+                                <p class="m-b-10 f-w-600">Tenure</p>
+                                <h6 class="text-muted f-w-400">{{ loanTenure }} Months</h6>
+                            </div>
+                        </div>
+
+                        <div class="info-center">
+                            <p (click)="toggle()" class="terms_conditions_text">Terms and Conditions</p>
+                        </div>
+                       
+                       
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-5 chart">
+                <div class="card card-less p-3">
+                    <div class="d-flex justify-content-between">
+                        
+                        <app-loan-details-chart ></app-loan-details-chart>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-transaction-table></app-transaction-table>
+
+
+             
+    </div>
+
+    <div class="terms_conditions" *ngIf="this.showTermsAndConditions" >
+        <app-terms-and-conditions (messageEvent)="receiveMessage($event)"></app-terms-and-conditions>
+    </div>
+
+  
+
+    
+</body>
+</html>

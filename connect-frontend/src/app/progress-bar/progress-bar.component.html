@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'> -->
+
+</head>
+  
+  <body>
+    <h2>Application Status</h2>
+    <!-- <img class="title_image" src="https://azzetmarks.com/wp-content/uploads/2018/09/slider_application_status.jpg" alt="Not Available"> -->
+    <img class="title_image" src="..\..\..\assets\images\laptop.png" alt="Not Available">
+
+    <div class="progress_bar">
+      <ul>
+        <li>
+          <img src="..\..\..\assets\images\application_submission.png" alt="Not Found"/><br>
+          <i [ngClass]="status[0]"></i>
+          <p class="status_tags">Application Submitted</p>
+
+        </li>
+
+             
+        <li>
+          <img src="..\..\..\assets\images\loan_review_2.png" alt="Not Found" /><br>
+          <i [ngClass]="status[1]"></i>
+          <p>Loan Review</p>
+        </li>
+        
+        <li>
+          <img src="..\..\..\assets\images\loan_accepted.png" alt="Not Found" /><br>
+          <i [ngClass]="status[2]"></i>
+          <p>Loan Accepted / Rejected</p>
+        </li>
+        
+        <li>
+          <img src="..\..\..\assets\images\loan_dispursal_1.png" alt="Not Found"/><br>
+          <i [ngClass]="status[3]"></i>
+          <p>Loan Dispersal</p>
+        </li>
+
+        
+      </ul>
+
+
+    </div>
+  </body>
+</html>
